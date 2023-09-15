@@ -41,10 +41,14 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-.slider.rounded {
-  border-radius: 34px;
-}
-
 .slider.square {
   border-radius: 0;
+}
+
+.slider.rounded {
+  border-radius: 17px; /* half of the height to get a full circle */
+}
+
+.slider.rounded:before {
+  border-radius: 50%; /* makes the thumb rounded */
 }
