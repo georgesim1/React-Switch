@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Switch from './Switch';
 
-function App() {
+const App = () => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleSelectedChange = (newState) => {
+    console.log("Value :", newState);
+    setIsSelected(newState);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Switch selected={isSelected} handleSelected={handleSelectedChange} />
     </div>
   );
-}
+};
 
 export default App;
